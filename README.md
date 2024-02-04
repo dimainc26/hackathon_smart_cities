@@ -1,3 +1,40 @@
+# Nome del Progetto
+
+Una breve descrizione del tuo progetto, cosa fa e perché è utile.
+
+## Screenshot
+
+![Screenshot](url-del-screenshot)
+
+## Tecnologie Utilizzate
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Vue.js
+- Node.js
+- Express
+- MongoDB
+
+## Caratteristiche
+
+Elenco delle caratteristiche principali del progetto.
+
+- Caratteristica 1
+- Caratteristica 2
+- Caratteristica 3
+
+## Installazione
+
+Fornisci istruzioni passo passo su come eseguire una copia in locale del progetto.
+
+```bash
+git clone https://github.com/tuo-username/nome-del-progetto.git
+cd nome-del-progetto
+npm install
+npm start
+
+
 
 Titolo del documento
 ====================## Sottotitolo
