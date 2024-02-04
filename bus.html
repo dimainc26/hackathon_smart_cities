@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>MAZE || BUS</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+        integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+        crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+        integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+        crossorigin=""></script>
+    <style>
+        #map {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="assets/css/plugins/slicknav.min.css" rel="stylesheet">
+
+    <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet">
+
+    <link href="assets/css/plugins/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="assets/css/plugins/gijgo.css" rel="stylesheet">
+
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+
+    <link href="assets/css/reset.css" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet">
+
+    <link href="assets/css/responsive.css" rel="stylesheet">
+
+
+
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+</head>
+
+<body class="loader-active">
+
+
+    <div class="preloader">
+        <div class="preloader-spinner">
+            <div class="loader-content">
+                <img src="assets/img/preloader.gif" alt="JSOFT">
+            </div>
+        </div>
+    </div>
+
+
+
+    <header id="header-area" class="fixed-top">
+
+        <div id="header-top" class="d-none d-xl-block">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 text-left">
+                        <i class="fa fa-map-marker"></i> Ouagadougou
+                    </div>
+
+
+
+                    <div class="col-lg-3 text-center">
+                        <i class="fa fa-mobile"></i>Numéro Vert : 80102030
+                    </div>
+
+
+
+                    <div class="col-lg-3 text-center">
+                        <i class="fa fa-clock-o"></i>
+                        <script type="text/javascript" language="javascript">
+                            d = new Date(); document.write(d.toLocaleDateString() + '  ' + d.toLocaleTimeString() + '.'); 
+                        </script>
+
+                    </div>
+
+
+
+                    <div class="col-lg-3 text-right">
+                        <div class="header-social-icons">
+                            <i class="fa fa-behance"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a> -->
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <i class="fa fa-linkedin"></i></a> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="header-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4">
+                        <a href="index.html" class="logo">
+                            <img src="assets/img/logo.png" alt="JSOFT">
+                        </a>
+                    </div>
+
+
+
+                    <div class="col-lg-8 d-none d-xl-block">
+                        <nav class="mainmenu alignright">
+                            <ul>
+                                <li><a href="index.html">Accueil</a>
+
+                                </li>
+                                <li><a href="#">Code de la route</a>
+                                    <ul>
+                                        <li><a href="cours.html">Cours</a></li>
+                                        <li><a href="jeux.html">Jeux</a></li>
+                                    </ul>
+                                </li>
+                                <li class="active"><a href="bus.html">BUS</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+
+    <section id="page-title-area" class="section-padding overlay">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        <h2>BUS</h2>
+                        <span class="title-line"><i class="fa fa-car"></i></span>
+                        <p>Utiliser les transports en commun c'est circuler librement, en toute sécurité et à moindre
+                            coût.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <br><br>
+    <div class="section-title  text-center">
+        <h2>ITINERAIRE des BUS</h2>
+    </div>
+
+    <div id="map"></div>
+    <script>
+        // Initialisation de la carte
+        // var map = L.map('map').fitWorld().setZoom(2);
+        var map = L.map('map').setView([12.325881, -1.5064192, 16], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var points = [
+            [12.349359, -1.489803],
+            [12.354180, -1.486627],
+            [12.375743, -1.472014],
+            [12.381140, -1.468441],
+            [12.382198, -1.468119],
+            [12.383673, -1.467999],
+            [12.389667, -1.469555],
+            [12.392381, -1.470306],
+            [12.392507, -1.470606],
+            [12.392318, -1.470327],
+            [12.392622, -1.470584],
+            [12.392936, -1.470487],
+            [12.395566, -1.471120],
+            [12.397924, -1.471538],
+            [12.410289, -1.474767],
+            [12.410834, -1.475228],
+            [12.412678, -1.477277],
+            [12.413380, -1.478039],
+            [12.404086, -1.489186],
+            [12.402262, -1.491396],
+            [12.403216, -1.492340],
+            [12.402262, -1.491396],
+            [12.399077, -1.495258],
+            [12.396122, -1.498337],
+            [12.390568, -1.501341],
+            [12.385067, -1.502564],
+            [12.385607, -1.500241],
+            [12.386461, -1.496861],
+            [12.384187, -1.496335],
+            [12.381420, -1.496464],
+            [12.377930, -1.496561],
+            [12.376227, -1.496604],
+            [12.376044, -1.493739],
+            [12.368142, -1.493996],
+            [12.358490, -1.494312],
+            [12.356111, -1.490246],
+            [12.352573, -1.492773],
+            [12.346893, -1.496571],
+            [12.345418, -1.494313],
+            [12.344538, -1.493069],
+            [12.349359, -1.489803],
+            [12.335765, -1.499034],
+            [12.334832, -1.499924],
+            [12.333428, -1.502156],
+            [12.332317, -1.502607],
+            [12.329162, -1.502564],
+            [12.317624, -1.502654],
+            [12.316177, -1.502708],
+            [12.315983, -1.528602],
+            [12.322287, -1.528398],
+            [12.331202, -1.526424]
+
+        ];
+
+        var route = L.polyline(points).addTo(map);
+
+        var marker = L.marker(new L.LatLng(12.349350, -1.489803), {
+            icon: L.mapbox.marker.icon({ "marker-symbol": "car", "marker-color": "red" }),
+            title: title
+        });
+
+        L.marker([12.349359, -1.489803]).addTo(map)
+            .bindPopup('Siao<br>7H30<br>16H30')
+            .openPopup();
+
+        L.marker([12.375743, -1.472014]).addTo(map)
+            .bindPopup('Pediatrie<br>7H00<br>16H00')
+            .openPopup();
+
+        L.marker([12.383673, -1.467999]).addTo(map)
+            .bindPopup('Dassasgo<br>6H30<br>15H30')
+            .openPopup();
+
+        L.marker([12.397924, -1.471538]).addTo(map)
+            .bindPopup('Wagnalgin<br>6H00<br>15H00')
+            .openPopup();
+
+        L.marker([12.404086, -1.489186]).addTo(map)
+            .bindPopup('Boulangerie Wend Konta<br>5H30<br>14H30')
+            .openPopup();
+
+        L.marker([12.403216, -1.492340]).addTo(map)
+            .bindPopup('SOTRACO Siege<br>5H00<br>14H00')
+            .openPopup();
+
+        L.marker([12.399077, -1.495258]).addTo(map)
+            .bindPopup('Somgandin<br>5H30<br>11H00<br>14H30<br>20H00')
+            .openPopup();
+
+        L.marker([12.381420, -1.496464]).addTo(map)
+            .bindPopup('LTO<br>6H00<br>10H30<br>15H00<br>19H30')
+            .openPopup();
+
+        L.marker([12.377930, -1.496561]).addTo(map)
+            .bindPopup('UO 1<br>6H30<br>10H00<br>15H30<br>19H00')
+            .openPopup();
+
+        L.marker([12.368142, -1.493996]).addTo(map)
+            .bindPopup('1200 lgts<br>7H00<br>9H30<br>16H00<br>18H30')
+            .openPopup();
+
+        L.marker([12.358490, -1.494312]).addTo(map)
+            .bindPopup('Rond point 1200 lgts<br>7H30<br>9H00<br>16H30<br>18H00')
+            .openPopup();
+
+        L.marker([12.352573, -1.492773]).addTo(map)
+            .bindPopup('Zad 2<br>8H00<br>8H30<br>17H00<br>17H30')
+            .openPopup();
+
+        L.marker([12.345418, -1.494313]).addTo(map)
+            .bindPopup('Zad<br>8H00<br>8H30<br>17H00<br>17H30')
+            .openPopup();
+
+        L.marker([12.329162, -1.502564]).addTo(map)
+            .bindPopup('Echangeur de Ouaga 2000<br>9H00<br>18H00')
+            .openPopup();
+
+        L.marker([12.316177, -1.502708]).addTo(map)
+            .bindPopup('Av Muammard Khadafi<br>9H30<br>18H30')
+            .openPopup();
+
+        L.marker([12.315983, -1.528602]).addTo(map)
+            .bindPopup('Baguette du Faso<br>10H00<br>19H00')
+            .openPopup();
+
+        L.marker([12.331202, -1.526424]).addTo(map)
+            .bindPopup('Rond point de la Pate doie<br>10H30<br>19H30')
+            .openPopup();
+
+    </script>
+    <br><br>
+    <div class="section-title  text-center">
+        <h2>TRAJET RAPIDE</h2>
+    </div>
+    <iframe src="https://map.project-osrm.org/?z=16&center=12.305853%2C-1.506929&hl=fr&alt=0" width="100%"
+        height="500"></iframe>
+</body>
+
+
+
+
+<section id="footer-area">
+
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+<div class="scroll-top">
+    <img src="assets/img/scroll-top.png" alt="JSOFT">
+</div>
+
+
+
+
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+
+<script src="assets/js/jquery-migrate.min.js"></script>
+
+<script src="assets/js/popper.min.js"></script>
+
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script src="assets/js/plugins/gijgo.js"></script>
+
+<script src="assets/js/plugins/vegas.min.js"></script>
+
+<script src="assets/js/plugins/isotope.min.js"></script>
+
+<script src="assets/js/plugins/owl.carousel.min.js"></script>
+
+<script src="assets/js/plugins/waypoints.min.js"></script>
+
+<script src="assets/js/plugins/counterup.min.js"></script>
+
+<script src="assets/js/plugins/mb.YTPlayer.js"></script>
+
+<script src="assets/js/plugins/magnific-popup.min.js"></script>
+
+<script src="assets/js/plugins/slicknav.min.js"></script>
+
+
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
