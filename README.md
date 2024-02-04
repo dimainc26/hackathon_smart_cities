@@ -1,4 +1,5 @@
-# Nome del Progetto
+# Smart Cities 
+## Hackathon
 
 Una breve descrizione del tuo progetto, cosa fa e perché è utile.
 
