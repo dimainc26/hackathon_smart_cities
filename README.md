@@ -13,25 +13,19 @@ Thanks GOD, we ended up first on this competition... The laureates of 2019
 - HTML5
 - CSS3
 - JavaScript (ES6+)
-- Vue.js
-- Node.js
-- Express
-- MongoDB
+- Bootstrap
+- JQuery
 
 ## Caratteristiche
 
-Elenco delle caratteristiche principali del progetto.
-
-- Caratteristica 1
-- Caratteristica 2
-- Caratteristica 3
+- Dynamic website
+- Audios & videos contents
+- Download PDFS
 
 ## Installazione
 
-Fornisci istruzioni passo passo su come eseguire una copia in locale del progetto.
-
 ```bash
-git clone https://github.com/tuo-username/nome-del-progetto.git
+git clone https://github.com/dimainc26/hackathon_smart_cities.git
 cd nome-del-progetto
 npm install
 npm start
