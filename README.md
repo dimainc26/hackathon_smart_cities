@@ -6,7 +6,9 @@ Thanks GOD, we ended up first on this competition... The laureates of 2019
 
 ## Screenshot
 
-![Screenshot](url-del-screenshot)
+![maze_securite_routiere](https://github.com/dimainc26/hackathon_smart_cities/assets/125144533/5a4de376-143f-4831-8338-d5fc736f784e)
+![maze_securite_routiere_logo](https://github.com/dimainc26/hackathon_smart_cities/assets/125144533/617024d1-af3a-44db-84d1-b58ba89dada6)
+
 
 ## Tecnologie Utilizzate
 
