@@ -1,6 +1,7 @@
 Front-End: Javascript
 
 title: **Smart cities**
+
 ====================##
 
 date: 2019
