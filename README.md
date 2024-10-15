@@ -11,7 +11,6 @@ Nous avons participé à une compétition sur le thème des **Smart Cities** lor
 - HTML5
 - CSS3
 - JavaScript (ES6+)
-- PHP (si applicable)
 
 ## Fonctionnalités
 - Proposer des solutions innovantes pour améliorer la mobilité urbaine
@@ -20,10 +19,9 @@ Nous avons participé à une compétition sur le thème des **Smart Cities** lor
 ## Captures d'écran
 ![Home Screen](https://github.com/dimainc26/hackathon_smart_cities/blob/main/assets/home.png)
 ![screenshot_04_02_2024 14-50-24](https://github.com/dimainc26/hackathon_smart_cities/assets/125144533/d7052724-0607-4d17-873e-1e1e3f8342aa)
-![maze_securite_routiere](https://github.com/dimainc26/hackathon_smart_cities/assets/125144533/5a4de376-143f-4831-8338-d5fc736f784e)
 
 ## Démo
-[Lien vers la démo](https://dev.dimazanre.com/smart_cities)
+[Lien vers la démo](https://dev.dimazanre.com/hackathon_smart_cities)
 
 ## Contributions
 Les contributions sont les bienvenues. N'hésitez pas à soumettre des pull requests ou à ouvrir des issues pour discuter des améliorations.
