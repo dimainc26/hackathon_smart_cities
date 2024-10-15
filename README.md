@@ -21,7 +21,7 @@ Nous avons participé à une compétition sur le thème des **Smart Cities** lor
 ![screenshot_04_02_2024 14-50-24](https://github.com/dimainc26/hackathon_smart_cities/assets/125144533/d7052724-0607-4d17-873e-1e1e3f8342aa)
 
 ## Démo
-[Lien vers la démo](https://dev.dimazanre.com/hackathon_smart_cities)
+[Lien vers la démo](https://dev.dimazanre.com/smart_cities)
 
 ## Contributions
 Les contributions sont les bienvenues. N'hésitez pas à soumettre des pull requests ou à ouvrir des issues pour discuter des améliorations.
